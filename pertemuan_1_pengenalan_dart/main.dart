@@ -8,6 +8,9 @@ void main() {
   print("Slope: ${s.slope}");
   print("Intercept: ${s.intercecpt}");
   print("R^2: ${s.r2}");
+
+  double input = 52.7;
+  print('Prediksi dengan input $input adalah ${s.predict(input)}');
 }
 
 class SimpleLinearRegression {
@@ -39,5 +42,9 @@ class SimpleLinearRegression {
                 sqrt((n * sumXX - sumX * sumX) * (n * sumYY - sumY * sumY)),
             2)
         .toDouble();
+  }
+
+  double predict(double x) {
+    return this.slope * x + this.intercecpt;
   }
 }
